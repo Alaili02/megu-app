@@ -1,13 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+    --main-bg-color: #B5FFE9;
+    --accent-color: #87D68D;
+    --dark-color: #444545;
+    --light-color: #F7FFF6;
+    --border-color: #444545;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    background-color:var(--light-color);
+  }
+* {
+    padding: 0;
+    margin: 0;
+}
+
+div.MainContent {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Waifu {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid var(--border-color);
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.Waifu.First {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.WaifuText {
+    margin-right: auto;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.WaifuImage {
+    height: 100%;
+}
+
+.Navbar {
+    background-color: var(--accent-color);
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Clock {
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+.Navbar a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    width: 15%;
+    height: 100%;
 }
