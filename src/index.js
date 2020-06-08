@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import RemImage from './images/Rem.png';
-import YotsugiImage from './images/Yotsugi.jpg'
+
+import RemImage from './images/Rem_.webp';
+import YotsugiImage from './images/Yotsugi_.webp'
+import AsukaImg from './images/Asuka_.webp'
+import MitsuriImg from './images/Mitsuri2_.webp'
+import ShinobuImg from './images/Shinobu_.webp'
+import SaberImg from './images/Saber_.webp'
+
+
+import {IconContext} from "react-icons"
+import {MdMenu} from "react-icons/md/";
 
 
   class Clock extends React.Component {
@@ -30,7 +39,7 @@ import YotsugiImage from './images/Yotsugi.jpg'
 
     render() {
       return (
-        <h2 className = "Clock">{this.state.date.toLocaleTimeString()}</h2>
+        <span className = "Clock">{this.state.date.toLocaleTimeString()}</span>
       );
     }
   }
@@ -61,11 +70,40 @@ import YotsugiImage from './images/Yotsugi.jpg'
       }
   }
  
+  class NavBar extends React.Component {          
+    render() {
+      return (
+        <nav className = "Navbar">     
+          <button onClick = {() => this.props.menutoggle()}>
+            <IconContext.Provider value={{className: "icons" }}>
+              <MdMenu/>
+            </IconContext.Provider>
+          </button>         
+          <Clock/>
+        </nav>
+      );
+    }
+  }
+  class SideMenu extends React.Component {   
+    render() {
+      return (
+        <div className = {this.props.className}>
+          <ul>
+            <li><a href = "">One</a></li>
+            <li><a href = "">Two</a></li>
+            <li><a href = "">Three</a></li>
+          </ul>
+        </div>
+      );
+    }
+  }
+
   class MainContent extends React.Component {
     render() {
         return (
             <div className = "MainContent">
-                <Waifu 
+                <p className ="hold">Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. </p>
+                <Waifu
                   className = "Waifu First"
                   name = "Rem" 
                   Imgsrc = {RemImage} 
@@ -75,36 +113,68 @@ import YotsugiImage from './images/Yotsugi.jpg'
                 </Waifu>
                 <Waifu
                   className = "Waifu"
+                  name = "Artoria Pendragon"
+                  Imgsrc = {SaberImg}
+                  alt = "Artoria Pendragon"
+                >
+                    Excalibur.
+                </Waifu>
+                <Waifu
+                  className = "Waifu"
                   name = "Ononoki Yotsugi"
                   Imgsrc = {YotsugiImage}
                   alt = "Ononoki Yotsugi"
                 >
                     Is a doll.
                 </Waifu>
+                <Waifu
+                  className = "Waifu"
+                  name = "Asuka Soryu Langley"
+                  Imgsrc = {AsukaImg}
+                  alt = "Asuka Soryu Langley"
+                >
+                    Pathetic.
+                </Waifu>
+                <Waifu
+                  className = "Waifu"
+                  name = "Shinobu"
+                  Imgsrc = {ShinobuImg}
+                  alt = "Shinobu"
+                >
+                    Ara Ara Sayonara.
+                </Waifu>
+                <Waifu
+                  className = "Waifu"
+                  name = "Kanroji Mitsuri"
+                  Imgsrc = {MitsuriImg}
+                  alt = "Kanroji Mitsuri"
+                >
+                    Butterfly.
+                </Waifu>
+                <p className ="hold">Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. </p>
             </div>
         );
     }
   }
 
-  class NavBar extends React.Component {
-    render() {
-      return (
-        <nav className = "Navbar">
-          <a href = "https://www.google.com"><img src = {RemImage} height = "100%" alt = "RemIcon"></img></a>
-          <a href = "https://www.google.com">Two</a>
-          <a href = "https://www.google.com">Three</a>
-          <Clock/>
-        </nav>
-      );
+  class Wrapper extends React.Component {  
+    constructor(props) {
+      super(props);
+      this.state = {
+          SideMenuActive: false,
+      };
     }
-  }
-
-  class Wrapper extends React.Component {
+    ToggleMenuShift = () => {
+      this.setState({SideMenuActive: !this.state.SideMenuActive});
+      console.log("Switched to " + this.state.SideMenuActive);
+    } 
       render() {
           return (
-              <div>
-                <NavBar/>
-                <MainContent></MainContent>
+              <div className = "Wrapper">
+                <NavBar menutoggle = {this.ToggleMenuShift}/>
+                <SideMenu className = {this.state.SideMenuActive ? "SideMenu ShiftedRight" : "SideMenu"}/>             
+                <MainContent/>
+                <footer className = "Footer">Footer</footer>
               </div>
           );
       }

@@ -1,25 +1,24 @@
 :root{
-    --main-bg-color: #B5FFE9;
-    --accent-color: #87D68D;
-    --dark-color: #444545;
-    --light-color: #F7FFF6;
-    --border-color: #444545;
+    --accent-color: #9ACBF3;
+    --dark-accent-color: #2C302E;
+    --light-color: #f0f0f0;
 }
 
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     background-color:var(--light-color);
-  }
+}
 * {
     padding: 0;
     margin: 0;
+    overflow: none;
 }
 
 div.MainContent {
-    display: flex;
+    margin-top: 3rem;
     width: 100%;
+    display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .Waifu {
@@ -27,41 +26,111 @@ div.MainContent {
     height: 10rem;
     display: flex;
     flex-flow: row nowrap;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 0.05rem solid var(--dark-accent-color);
     justify-content: flex-start;
-    overflow: hidden;
 }
 .Waifu.First {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top: 0.05rem solid var(--dark-accent-color);
 }
 .WaifuText {
     margin-right: auto;
     text-align: left;
     padding: 0.5rem;
+    overflow: hidden;
 }
 
 .WaifuImage {
-    height: 100%;
+    width: 10rem;
 }
 
 .Navbar {
-    background-color: var(--accent-color);
+    background-color: var(--light-color);
+    position: fixed;
+    top: 0;
     height: 3rem;
+    width: 100vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    -webkit-box-shadow: 0px 0.005em 0.5em rgba(0,0,0,0.75);   
+    -moz-box-shadow: 0px 0.005em 0.5em rgba(0,0,0,0.75);   
+    box-shadow: 0px 0.005em 0.5em rgba(0,0,0,0.75);    
 }
 
 .Clock {
     margin-left: auto;
     margin-right: 0.5rem;
+    font-size: larger;
 }
 
-.Navbar a {
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    width: 15%;
+.Navbar button {
+    background-color: var(--light-color);
     height: 100%;
+    border: none;
+    outline: none;
+}
+
+.icons {
+    color: var(--dark-accent-color);
+    font-size: 2em;
+    padding: 0.4em;
+  }
+
+.MainContent p.hold {
+    margin: 0.5rem;
+}
+
+.SideMenu {
+    z-index: inherit;
+    position: fixed;
+    display: block;
+    background-color: var(--light-color);
+    height: 100vh;
+    left: -10rem;
+    top: 0;
+    margin-top: 3rem;
+    width: 10rem;
+    transition: left 200ms ease;
+    box-shadow: none;
+}
+.SideMenu.ShiftedRight {
+    display: block;
+    left: 0rem;
+
+    -webkit-box-shadow: 1rem 0 2rem -2rem rgba(0,0,0,0.75);
+    -moz-box-shadow: 1rem 0 2rem -2rem rgba(0,0,0,0.75);
+    box-shadow: 1rem 0 2rem -2rem rgba(0,0,0,0.75);
+}
+
+.SideMenu ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+.SideMenu li {
+    width: 100%;
+    height: 3rem;
+}
+.SideMenu ul li a{
+    display: block;
+    text-decoration: none;
+    color: var(--dark-accent-color);
+    text-align: center;
+    padding: 1em;
+}
+
+.Footer {
+    position: relative;
+    bottom: 0;
+    background-color: var(--light-color);
+    height: 3rem;
+    width: 100vw;
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 0.05rem solid var(--dark-accent-color);
 }
