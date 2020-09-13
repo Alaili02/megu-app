@@ -21,7 +21,7 @@ div.MainContent {
     flex-direction: column;
 }
 
-.Waifu {
+.Object {
     width: 100%;
     height: 10rem;
     display: flex;
@@ -29,17 +29,17 @@ div.MainContent {
     border-bottom: 0.05rem solid var(--dark-accent-color);
     justify-content: flex-start;
 }
-.Waifu.First {
+.Object.First {
     border-top: 0.05rem solid var(--dark-accent-color);
 }
-.WaifuText {
+.ObjectText {
     margin-right: auto;
     text-align: left;
     padding: 0.5rem;
     overflow: hidden;
 }
 
-.WaifuImage {
+.ObjectImage {
     width: 10rem;
 }
 

@@ -2,17 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import RemImage from './images/Rem_.webp';
-import YotsugiImage from './images/Yotsugi_.webp'
-import AsukaImg from './images/Asuka_.webp'
-import MitsuriImg from './images/Mitsuri2_.webp'
-import ShinobuImg from './images/Shinobu_.webp'
-import SaberImg from './images/Saber_.webp'
-
+import SampleImage from './images/Sample_Image.webp';
 
 import {IconContext} from "react-icons"
 import {MdMenu} from "react-icons/md/";
-
 
   class Clock extends React.Component {
     constructor(props) {
@@ -44,28 +37,28 @@ import {MdMenu} from "react-icons/md/";
     }
   }
 
-  class Waifu extends React.Component {
+  class Object extends React.Component {
       render() {
           return (
             <div className = {this.props.className}>
-                <WaifuText name = {this.props.name}>{this.props.children}</WaifuText>
-                <WaifuImage src = {this.props.Imgsrc} alt = {this.props.alt} />
+                <ObjectText name = {this.props.name}>{this.props.children}</ObjectText>
+                <ObjectImage src = {this.props.Imgsrc} alt = {this.props.alt} />
             </div>
           );
       }
   }
 
-  class WaifuText extends React.Component {
+  class ObjectText extends React.Component {
         render() {
             return (
-              <p className = "WaifuText">{this.props.name}. {this.props.children}</p>
+              <p className = "ObjectText">{this.props.name}. {this.props.children}</p>
             );
         }
   }
-  class WaifuImage extends React.Component {
+  class ObjectImage extends React.Component {
       render() {
         return (
-          <img src = {this.props.src} alt = {this.props.alt} className = "WaifuImage"/>
+          <img src = {this.props.src} alt = {this.props.alt} className = "ObjectImage"/>
         );
       }
   }
@@ -102,56 +95,56 @@ import {MdMenu} from "react-icons/md/";
     render() {
         return (
             <div className = "MainContent">
-                <p className ="hold">Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. </p>
-                <Waifu
-                  className = "Waifu First"
-                  name = "Rem" 
-                  Imgsrc = {RemImage} 
-                  alt = "Best Girl Rem"
+                <p className ="hold">Introductory Paragraph here</p>
+                <Object
+                  className = "Object First"
+                  name = "Name Placeholder" 
+                  Imgsrc = {SampleImage} 
+                  alt = "Sample Image"
                 >
-                    Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. Best Girl. 
-                </Waifu>
-                <Waifu
-                  className = "Waifu"
-                  name = "Artoria Pendragon"
-                  Imgsrc = {SaberImg}
-                  alt = "Artoria Pendragon"
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum risus in justo placerat, vel vulputate urna vestibulum. Sed eu suscipit mauris. 
+                </Object>
+                <Object
+                  className = "Object"
+                  name = "Name Placeholder"
+                  Imgsrc = {SampleImage}
+                  alt = "Sample Image"
                 >
-                    Excalibur.
-                </Waifu>
-                <Waifu
-                  className = "Waifu"
-                  name = "Ononoki Yotsugi"
-                  Imgsrc = {YotsugiImage}
-                  alt = "Ononoki Yotsugi"
+                    Vestibulum in tellus venenatis, gravida leo non, fringilla purus. Nunc volutpat enim sed nunc fermentum porta. Cras dapibus bibendum dui, id viverra dolor aliquet et.
+                </Object>
+                <Object
+                  className = "Object"
+                  name = "Name Placeholder"
+                  Imgsrc = {SampleImage}
+                  alt = "Sample Image"
                 >
-                    Is a doll.
-                </Waifu>
-                <Waifu
-                  className = "Waifu"
-                  name = "Asuka Soryu Langley"
-                  Imgsrc = {AsukaImg}
-                  alt = "Asuka Soryu Langley"
+                    Integer ullamcorper eleifend justo, non commodo lectus semper pharetra. Sed vulputate rhoncus egestas. Donec purus risus, euismod rhoncus viverra tincidunt, porta ut magna.
+                </Object>
+                <Object
+                  className = "Object"
+                  name = "Name Placeholder"
+                  Imgsrc = {SampleImage}
+                  alt = "Sample Image"
                 >
-                    Pathetic.
-                </Waifu>
-                <Waifu
-                  className = "Waifu"
-                  name = "Shinobu"
-                  Imgsrc = {ShinobuImg}
-                  alt = "Shinobu"
+                    Sed ornare a leo scelerisque pulvinar. Mauris pharetra vel nunc et tincidunt. Aliquam sed mi ut nunc bibendum pretium. Nunc id semper nunc.
+                </Object>
+                <Object
+                  className = "Object"
+                  name = "Name Placeholder"
+                  Imgsrc = {SampleImage}
+                  alt = "Sample Image"
                 >
-                    Ara Ara Sayonara.
-                </Waifu>
-                <Waifu
-                  className = "Waifu"
-                  name = "Kanroji Mitsuri"
-                  Imgsrc = {MitsuriImg}
-                  alt = "Kanroji Mitsuri"
+                    Fusce bibendum neque quis elit euismod, ut molestie velit eleifend. Curabitur scelerisque magna turpis, consectetur pretium lectus tristique sed. 
+                </Object>
+                <Object
+                  className = "Object"
+                  name = "Name Placeholder"
+                  Imgsrc = {SampleImage}
+                  alt = "Sample Image"
                 >
-                    Butterfly.
-                </Waifu>
-                <p className ="hold">Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. Bakaretsu Bakaretsu La La La. </p>
+                     Nulla elit ipsum, egestas eget mauris scelerisque, aliquam vulputate justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                </Object>
+                <p className ="hold">Conclusion Paragraph </p>
             </div>
         );
     }
